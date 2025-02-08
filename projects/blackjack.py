@@ -15,7 +15,6 @@ logo = """
 def hit(deck):
     
     ran_2 = random.choice(deck[1])
-    deck[1].remove(ran_2)
     return ran_2
 
 def check_hand_sum(hand, player):
@@ -62,7 +61,7 @@ def blackjack():
     print(logo)
     print("\nWelcome to Blackjack!\n")
     deck = {
-        1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11],
+        1: [2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10, 11],
     }
     hand = {
         "player": [],

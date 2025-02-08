@@ -52,15 +52,103 @@
 #     print(i)
 #     print(type(i))
 
-list_num = [110, 80, 172, 54, 7, 45, 69, 66, 49, 11, 90, 132, 122, 183, 149, 14, 6, 57, 84, 63, 143, 156, 17, 186, 174, 29, 78, 157, 52, 126]
+# list_num = [110, 80, 172, 54, 7, 45, 69, 66, 49, 11, 90, 132, 122, 183, 149, 14, 6, 57, 84, 63, 143, 156, 17, 186, 174, 29, 78, 157, 52, 126]
 
-max_num = 0
-for i in list_num:
-    if(max_num < i):
-        max_num = i
-print(max_num)
+# max_num = 0
+# for i in list_num:
+#     if(max_num < i):
+#         max_num = i
+# print(max_num)
 
-total_sum = 0
-for i in range(1,101):
-    total_sum += i
-print(total_sum)
+# total_sum = 0
+# for i in range(1,101):
+#     total_sum += i
+# print(total_sum)
+
+#day 6: python function and while loop
+# def my_func(i):
+#     return i + 1
+# i = 0
+# for loop in range(0, 10):
+#     print("bruh")
+#     i = my_func(i)
+# print(f"result: {i}")
+
+#day 7: hang_man project // see projects page
+
+#day 8: functions with inputs // arguments & parameters
+# def life_in_weeks(age):
+#     till_90 = 90 * 52
+#     print(f"You have {till_90 - (age * 52)} weeks left.")
+# life_in_weeks(20)
+# def calculate_love_score(name1, name2):
+#     true = ['T','R','U','E']
+#     love = ['L','O','V','E']
+    
+#     names_together = " ".join([name1,name2])
+#     capitalized = names_together.upper()
+    
+#     calc1 = 0
+#     calc2 = 0
+#     for i in range(0,len(true)):
+#         for f in range(0, len(capitalized)):
+#             if capitalized[f] == true[i]:
+#                 calc1 += 1
+    
+#     for i in range(0,len(love)):
+#         for f in range(0, len(capitalized)):
+#             if capitalized[f] == love[i]:
+#                 calc2 += 1
+                
+#     print(f"{calc1}{calc2}")
+
+# calculate_love_score("Angela Yu", "Jack Bauer")
+
+#day 9: python dictionary, nesting
+
+# student_scores = {
+#     'Harry': 88,
+#     'Ron': 78,
+#     'Hermione': 95,
+#     'Draco': 75,
+#     'Neville': 60
+# }
+
+# student_grades = {}
+
+# for i in student_scores:
+#     grade = student_scores[i]
+#     if(grade >= 91):
+#         student_grades[i] = "Outstanding"
+#     elif(grade >= 81 and grade <= 90):
+#         student_grades[i] = "Exceeds Expectations"
+#     elif(grade >= 71 and grade <= 80):
+#         student_grades[i] = "Acceptable"
+#     elif(grade <= 70):
+#         student_grades[i] = "Fail"
+        
+# for test in student_grades:
+#     print(test)
+#     print(student_grades[test])
+
+# travel_log = {
+#     "France": ["Paris", "Lille", "Dijon"],
+#     "Philippines": ["Manila", "Cebu"],
+# }
+
+# nested_list = ['A', 'B', ['C', 'D']]
+
+# print(travel_log["France"][1])
+# print(nested_list[2][1])
+
+#day 10: function with outputs
+
+# def is_leap_year(year):
+#     """calculates a year if it is a leap year or not"""
+#     if year % 400 == 0 or (year % 4 == 0 and year % 100 != 0):
+#         return True
+#     else:
+#         return False
+
+# print(is_leap_year(1700))
+
