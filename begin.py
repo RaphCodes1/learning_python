@@ -152,3 +152,35 @@
 
 # print(is_leap_year(1700))
 
+#day 11: capstone project blackjack
+#check proj
+#day 12: scopes
+# def is_prime(num):
+#     check = 0
+#     if(num == 1):
+#         return False
+#     for i in range(1, 100):
+#         if(num % i == 0):
+#             check += 1
+#     if(check >= 3):
+#         return False
+#     else:
+#         return True
+        
+
+# print(is_prime(75))
+# print(75 % 4)
+
+#day 13: debug
+# def fizz_buzz(target):
+#     for number in range(1, target + 1):
+#         if number % 3 == 0 and number % 5 == 0:
+#             print("FizzBuzz")
+#         elif number % 3 == 0:
+#             print("Fizz")
+#         elif number % 5 == 0:
+#             print("Buzz")
+#         else:
+#             print(number)
+
+# fizz_buzz(20)
