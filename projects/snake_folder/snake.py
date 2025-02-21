@@ -40,3 +40,23 @@ class Snake:
     def turn_down(self):
         if self.head.heading() != 90:
             self.head.setheading(270)
+
+    def add_snake(self):
+        snake = Turtle(shape="square")
+        snake.color("white")
+        snake.penup()
+        snake.goto(x=self.segments[len(self.segments) - 1].xcor(),
+                   y = self.segments[len(self.segments) - 1].ycor())
+        self.segments.append(snake)
+
+    def check_wall(self):
+        if (self.head.xcor() < -300 or self.head.xcor() > 300
+                or self.head.ycor() < -300 or self.head.ycor() > 300):
+            return 1
+        return 0
+
+    def check_tail(self):
+        for segment in self.segments[1:]:
+            if self.head.distance(segment) < 10:
+                return 1
+        return 0
