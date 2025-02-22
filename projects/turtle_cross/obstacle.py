@@ -7,7 +7,7 @@ class Obstacle:
     def __init__(self):
         self.segments = []
         self.create_obstacles()
-        self.move_speed = 0.12
+        self.move_speed = 0.1
 
     def create_obstacles(self):
         for i in range(40):
@@ -21,14 +21,14 @@ class Obstacle:
             objs.goto(x=x_pos, y=y_pos)
             self.segments.append(objs)
 
-    def move_obstacles(self):
+    def move_obstacles(self,move):
         for i in range(0,40):
             y_pos = self.segments[i].ycor()
             new_y = random.randint(-150, 250)
             if self.segments[i].xcor() <= -300:
                 self.segments[i].goto(x=400, y=new_y)
             else:
-                new_x = self.segments[i].xcor() - 10
+                new_x = self.segments[i].xcor() - move
                 self.segments[i].goto(x=new_x,y=y_pos)
 
     def detect_collision(self, player):
