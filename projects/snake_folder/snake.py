@@ -58,5 +58,14 @@ class Snake:
     def check_tail(self):
         for segment in self.segments[1:]:
             if self.head.distance(segment) < 10:
+                self.segments[0].goto(1000, 1000)
                 return 1
         return 0
+
+    def snake_reset(self):
+        for i in range(len(self.segments) - 1, 0, -1):
+            self.segments[i].goto(1000,1000)
+        self.segments.clear()
+        self.create_snake()
+        self.head = self.segments[0]
+

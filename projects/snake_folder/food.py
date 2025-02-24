@@ -2,7 +2,7 @@ from turtle import Turtle
 import random
 
 class Food(Turtle):
-    def __init__(self, snake):
+    def __init__(self):
         super().__init__()
         self.shape("circle")
         self.penup()
@@ -10,14 +10,15 @@ class Food(Turtle):
         self.color("Cyan1")
         self.index_pos = 0
         self.food_pos = [(random.randint(-250, 250), random.randint(-250, 250))]
-        self.snake = snake
-        self.snake_head = self.snake.head
+        # self.snake = snake
+        # self.snake_head = self.snake.head
 
     def generate_pos(self):
         my_tuple = (random.randint(-250, 250), random.randint(-250, 250))
         self.food_pos.append(my_tuple)
-    def check_head_pos(self):
-        if (self.snake_head.distance(self.food_pos[self.index_pos][0],
+    def check_head_pos(self, snake):
+        snake_head = snake.head
+        if (snake_head.distance(self.food_pos[self.index_pos][0],
                                      self.food_pos[self.index_pos][1])
                                         < 15):
             self.generate_pos()

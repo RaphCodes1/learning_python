@@ -36,12 +36,4 @@ while end == 0:
         screen.exitonclick()
         break
 
-
-
-
-
-
-
-
-
 screen.exitonclick()
