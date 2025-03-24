@@ -7,7 +7,6 @@ class Interface:
 
     def __init__(self, quiz_brain: QuizBrain):
         self.quiz_brain = quiz_brain
-        self.score = 0
         self.screen = Tk()
         self.screen.title("Quizzler")
         self.screen.minsize(height=500,width=300)
@@ -45,21 +44,28 @@ class Interface:
         self.canvas.itemconfig(self.text_in,fill="#FFCF92", font=("Arial",25,"bold"), anchor="center")
         self.canvas.config(bg="#8296A1")
 
-    def true_cmd(self):
+    def set_white(self):
+        self.canvas.config(bg="white")
+        self.get_next_question()
+
+    def check_true_false(self, val):
         if self.quiz_brain.still_has_questions():
-            self.score = self.quiz_brain.check_answer("true")
-            self.score_txt.config(text=f"Score: {self.score}")
-            self.get_next_question()
+            if self.quiz_brain.check_answer(val):
+                self.canvas.config(bg="#239E5A")
+                self.screen.after(1000,self.set_white)
+            else:
+                self.canvas.config(bg="#FF4B3B")
+                self.screen.after(1000, self.set_white)
+            self.score_txt.config(text=f"Score: {self.quiz_brain.score}")
         else:
             self.end_screen()
+        self.quiz_brain.question_number += 1
+
+    def true_cmd(self):
+        self.check_true_false("true")
 
     def false_cmd(self):
-        if self.quiz_brain.still_has_questions():
-            self.score = self.quiz_brain.check_answer("false")
-            self.score_txt.config(text=f"Score: {self.score}")
-            self.get_next_question()
-        else:
-            self.end_screen()
+        self.check_true_false("false")
 
 
 

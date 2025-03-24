@@ -12,9 +12,3 @@ for question in question_data:
 quiz = QuizBrain(question_bank)
 ui = Interface(quiz)
 
-# while quiz.still_has_questions():
-#     question = quiz.next_question()
-#     ui.update_text(question)
-
-print("You've completed the quiz")
-print(f"Your final score was: {quiz.score}/{quiz.question_number}")
